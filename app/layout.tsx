@@ -39,10 +39,10 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0a0f1a] text-white`}>
         {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-5 bg-[#0a0f1a]/90 backdrop-blur-sm border-b border-white/5">
+        <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-5">
           <div className="max-w-[1400px] mx-auto flex justify-between items-center">
             <Link href="/home" className="hover:opacity-80 transition-opacity">
-              <img src="/logo.jpg" alt="Parlinum Consulting" className="h-10 w-auto" />
+              <img src="/logo.jpg" alt="Parlinum Consulting" className="h-16 w-auto mix-blend-lighten" />
             </Link>
             
             <div className="hidden md:flex items-center gap-8">
