@@ -62,7 +62,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 border border-[#c9a227] bg-[#c9a227]/20 backdrop-blur-sm px-3 py-1.5 mb-6 md:mb-8">
               <span className="text-[#c9a227] text-[10px] md:text-xs uppercase tracking-widest font-semibold drop-shadow-lg">SDVOSB Certified</span>
             </div>
-            <h1 className="text-[clamp(1.75rem,7vw,5rem)] font-bold leading-[1.1] tracking-tight mb-4 md:mb-6 [text-shadow:_0_4px_20px_rgba(0,0,0,0.8),_0_2px_4px_rgba(0,0,0,0.9)]">
+            <h1 className="text-[clamp(2rem,8vw,5rem)] font-bold leading-[1.1] tracking-tight mb-4 md:mb-6 [text-shadow:_0_4px_20px_rgba(0,0,0,0.8),_0_2px_4px_rgba(0,0,0,0.9)]">
               Risk is inevitable.<br />
               <span className="text-[#c9a227] [text-shadow:_0_4px_20px_rgba(0,0,0,0.8),_0_2px_4px_rgba(0,0,0,0.9)]">Being unprepared isn't.</span>
             </h1>
