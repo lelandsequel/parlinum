@@ -142,7 +142,7 @@ export default function PresentationPage() {
     <div className="min-h-screen bg-[#0a0f1a] text-white flex flex-col" onClick={next}>
       {/* Header */}
       <div className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center bg-[#0a0f1a]/80 backdrop-blur-sm">
-        <Link href="/" className="text-sm font-bold tracking-widest text-neutral-500 hover:text-white transition-colors">
+        <Link href="/home" className="text-sm font-bold tracking-widest text-neutral-500 hover:text-white transition-colors">
           PARLINUM
         </Link>
         <div className="text-sm text-neutral-600">

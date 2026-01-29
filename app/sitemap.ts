@@ -1,11 +1,18 @@
 import type { MetadataRoute } from 'next';
+import { services, industries } from '../lib/pseo-data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://parlinum.com';
   
-  return [
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/home`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
@@ -18,6 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/industries`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -59,4 +72,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
   ];
+
+  // pSEO pages: industry × service combinations
+  const pseoPages: MetadataRoute.Sitemap = [];
+  for (const industry of industries) {
+    for (const service of services) {
+      pseoPages.push({
+        url: `${baseUrl}/industries/${industry.slug}/${service.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      });
+    }
+  }
+
+  return [...staticPages, ...pseoPages];
 }

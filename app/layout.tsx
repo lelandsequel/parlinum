@@ -41,13 +41,16 @@ export default function RootLayout({
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-5 bg-[#0a0f1a]/90 backdrop-blur-sm border-b border-white/5">
           <div className="max-w-[1400px] mx-auto flex justify-between items-center">
-            <Link href="/" className="text-lg font-bold tracking-wide hover:text-[#c9a227] transition-colors">
+            <Link href="/home" className="text-lg font-bold tracking-wide hover:text-[#c9a227] transition-colors">
               PARLINUM
             </Link>
             
             <div className="hidden md:flex items-center gap-8">
               <Link href="/about" className="text-xs uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">
                 About
+              </Link>
+              <Link href="/industries" className="text-xs uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">
+                Industries
               </Link>
               <div className="relative group">
                 <span className="text-xs uppercase tracking-widest text-neutral-400 hover:text-white cursor-pointer transition-colors">
@@ -75,6 +78,9 @@ export default function RootLayout({
               </div>
               <Link href="/contact" className="text-xs uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">
                 Contact
+              </Link>
+              <Link href="/presentation" className="text-xs uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">
+                Deck
               </Link>
             </div>
 

@@ -41,7 +41,7 @@ export default function CybersecurityPage() {
     <div className="min-h-screen overflow-x-hidden pt-20">
       <section className="py-24 md:py-32 px-6 md:px-8 border-b border-white/5">
         <div className="max-w-[1400px] mx-auto">
-          <Link href="/" className="text-neutral-500 text-sm uppercase tracking-widest hover:text-white transition-colors mb-8 inline-block">
+          <Link href="/home" className="text-neutral-500 text-sm uppercase tracking-widest hover:text-white transition-colors mb-8 inline-block">
             ← Back Home
           </Link>
           <p className="text-[#c9a227] uppercase tracking-widest text-sm mb-4">Technology & Cybersecurity</p>
