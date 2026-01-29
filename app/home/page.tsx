@@ -49,37 +49,37 @@ export default function Home() {
             muted
             loop
             playsInline
-            className="w-[110%] h-[110%] object-cover object-left-top opacity-30"
+            className="w-[110%] h-[110%] object-cover object-left-top opacity-70"
           >
             <source src="/hero-bg.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1a] via-[#0a0f1a]/90 to-[#0a0f1a]/70" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a] via-transparent to-[#0a0f1a]/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1a]/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1a] via-transparent to-transparent" />
         </div>
         
         <div className="max-w-[1400px] mx-auto w-full relative z-10">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-3 border border-[#c9a227]/30 bg-[#c9a227]/10 px-4 py-2 mb-8">
-              <span className="text-[#c9a227] text-xs uppercase tracking-widest">SDVOSB Certified</span>
+            <div className="inline-flex items-center gap-3 border border-[#c9a227] bg-[#c9a227]/20 backdrop-blur-sm px-4 py-2 mb-8">
+              <span className="text-[#c9a227] text-xs uppercase tracking-widest font-semibold drop-shadow-lg">SDVOSB Certified</span>
             </div>
-            <h1 className="text-[clamp(2.5rem,7vw,5rem)] font-bold leading-[1.05] tracking-tight mb-6">
+            <h1 className="text-[clamp(2.5rem,7vw,5rem)] font-bold leading-[1.05] tracking-tight mb-6 [text-shadow:_0_4px_20px_rgba(0,0,0,0.8),_0_2px_4px_rgba(0,0,0,0.9)]">
               Risk is inevitable.<br />
-              <span className="text-[#c9a227]">Being unprepared isn't.</span>
+              <span className="text-[#c9a227] [text-shadow:_0_4px_20px_rgba(0,0,0,0.8),_0_2px_4px_rgba(0,0,0,0.9)]">Being unprepared isn't.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-neutral-400 max-w-2xl mb-10 leading-relaxed">
+            <p className="text-xl md:text-2xl text-white max-w-2xl mb-10 leading-relaxed [text-shadow:_0_2px_10px_rgba(0,0,0,0.8),_0_1px_3px_rgba(0,0,0,0.9)]">
               Enterprise risk management, cybersecurity, and strategic consulting 
               for organizations that can't afford to get it wrong.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-3 bg-[#c9a227] text-[#0a0f1a] px-8 py-4 text-sm uppercase tracking-widest font-semibold hover:bg-[#d4af37] transition-colors"
+                className="inline-flex items-center justify-center gap-3 bg-[#c9a227] text-[#0a0f1a] px-8 py-4 text-sm uppercase tracking-widest font-bold hover:bg-[#d4af37] transition-colors shadow-2xl"
               >
                 Schedule Consultation
               </Link>
               <Link
                 href="/presentation"
-                className="inline-flex items-center justify-center gap-3 border border-white/20 text-white px-8 py-4 text-sm uppercase tracking-widest font-medium hover:bg-white/5 transition-colors"
+                className="inline-flex items-center justify-center gap-3 border-2 border-white text-white px-8 py-4 text-sm uppercase tracking-widest font-bold hover:bg-white hover:text-[#0a0f1a] transition-colors backdrop-blur-sm shadow-2xl"
               >
                 View Our Approach
               </Link>
@@ -87,8 +87,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-12 left-6 md:left-8 text-xs uppercase tracking-widest text-neutral-600 hidden md:block">
-          Scroll
+        <div className="absolute bottom-12 left-6 md:left-8 text-xs uppercase tracking-widest text-white/70 hidden md:block [text-shadow:_0_2px_8px_rgba(0,0,0,0.8)]">
+          Scroll ↓
         </div>
       </section>
 
