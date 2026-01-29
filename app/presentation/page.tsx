@@ -32,6 +32,71 @@ const slides = [
   },
   {
     id: 3,
+    type: 'framework',
+    content: {
+      title: 'The 5 Pillars of SEO',
+      subtitle: 'Our Optimization Framework',
+      pillars: [
+        { num: '01', name: 'Technical SEO', desc: 'Site speed, crawlability, indexing, schema markup' },
+        { num: '02', name: 'Content Structure', desc: 'Hierarchy, headings, internal linking, readability' },
+        { num: '03', name: 'On-Page SEO', desc: 'Meta tags, keywords, URLs, image optimization' },
+        { num: '04', name: 'Trust & Authority', desc: 'E-E-A-T signals, credentials, social proof' },
+        { num: '05', name: 'Conversion Architecture', desc: 'CTAs, user flows, landing page optimization' }
+      ]
+    }
+  },
+  {
+    id: 4,
+    type: 'explainer',
+    content: {
+      title: 'What is AEO?',
+      subtitle: 'Answer Engine Optimization',
+      definition: 'AEO optimizes content for AI assistants (ChatGPT, Perplexity, Google AI) that read and cite web content to answer user questions.',
+      points: [
+        'Answer-first content blocks — lead with the answer, not the buildup',
+        'Structured FAQ schema — machine-readable Q&A format',
+        'Entity definitions — clearly state who you are, what you do',
+        'Concise, factual language — AI prefers clarity over marketing fluff'
+      ],
+      result: 'Your content gets cited when AI answers questions about your industry.'
+    }
+  },
+  {
+    id: 5,
+    type: 'explainer',
+    content: {
+      title: 'What is pSEO?',
+      subtitle: 'Programmatic SEO',
+      definition: 'pSEO creates many targeted pages programmatically from structured data — capturing long-tail searches at scale.',
+      points: [
+        'Service × Industry combinations (e.g., "ERM for Healthcare")',
+        'Service × Location combinations (e.g., "Cybersecurity DC")',
+        'Unique, valuable content per page — not thin duplicates',
+        'Scales to hundreds or thousands of rankable pages'
+      ],
+      result: 'Capture searches you\'d never rank for with a 5-page site.'
+    }
+  },
+  {
+    id: 6,
+    type: 'pseo-example',
+    content: {
+      title: 'pSEO in Action',
+      subtitle: 'What We Built for Parlinum',
+      matrix: {
+        services: ['ERM', 'Cybersecurity', 'Program Mgmt', 'Workforce'],
+        industries: ['Healthcare', 'Financial Services', 'Higher Ed', 'Government']
+      },
+      stats: { pages: 16, formula: '4 services × 4 industries' },
+      examples: [
+        '/industries/healthcare/enterprise-risk-management',
+        '/industries/financial-services/cybersecurity',
+        '/industries/government/program-management'
+      ]
+    }
+  },
+  {
+    id: 7,
     type: 'pillar',
     content: {
       num: '01',
@@ -41,7 +106,7 @@ const slides = [
     }
   },
   {
-    id: 4,
+    id: 8,
     type: 'pillar',
     content: {
       num: '02',
@@ -51,7 +116,7 @@ const slides = [
     }
   },
   {
-    id: 5,
+    id: 9,
     type: 'pillar',
     content: {
       num: '03',
@@ -61,7 +126,7 @@ const slides = [
     }
   },
   {
-    id: 6,
+    id: 10,
     type: 'pillar',
     content: {
       num: '04',
@@ -71,7 +136,7 @@ const slides = [
     }
   },
   {
-    id: 7,
+    id: 11,
     type: 'pillar',
     content: {
       num: '05',
@@ -81,7 +146,7 @@ const slides = [
     }
   },
   {
-    id: 8,
+    id: 12,
     type: 'comparison',
     content: {
       title: 'Before vs After',
@@ -90,12 +155,13 @@ const slides = [
         { label: 'Lighthouse Score', before: '~60', after: '95+' },
         { label: 'Schema Types', before: '0', after: '6+' },
         { label: 'AEO Readiness', before: 'None', after: 'Full' },
-        { label: 'Mobile Experience', before: 'Passable', after: 'Optimized' }
+        { label: 'Total Pages', before: '5', after: '32' },
+        { label: 'pSEO Pages', before: '0', after: '16' }
       ]
     }
   },
   {
-    id: 9,
+    id: 13,
     type: 'closing',
     content: {
       title: 'The Result',
@@ -103,8 +169,8 @@ const slides = [
       points: [
         'Faster, more professional first impression',
         'Discoverable by search engines AND AI assistants',
-        'Trust signals that close deals',
-        'Architecture that converts visitors to clients'
+        '32 pages capturing long-tail searches',
+        'Trust signals that close deals'
       ]
     }
   }
@@ -173,6 +239,81 @@ export default function PresentationPage() {
                   </li>
                 ))}
               </ul>
+            </div>
+          )}
+
+          {slide.type === 'framework' && (
+            <div>
+              <p className="text-[#c9a227] uppercase tracking-widest text-sm mb-4">{slide.content.subtitle}</p>
+              <h2 className="text-5xl md:text-6xl font-bold mb-12">{slide.content.title}</h2>
+              <div className="grid md:grid-cols-5 gap-4">
+                {slide.content.pillars?.map((pillar) => (
+                  <div key={pillar.num} className="border border-white/20 p-4">
+                    <div className="text-[#c9a227] text-2xl font-bold mb-2">{pillar.num}</div>
+                    <div className="text-lg font-bold mb-2">{pillar.name}</div>
+                    <div className="text-neutral-500 text-sm">{pillar.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {slide.type === 'explainer' && (
+            <div>
+              <p className="text-[#c9a227] uppercase tracking-widest text-sm mb-4">{slide.content.subtitle}</p>
+              <h2 className="text-5xl md:text-6xl font-bold mb-8">{slide.content.title}</h2>
+              <p className="text-xl text-neutral-300 mb-8 max-w-3xl">{slide.content.definition}</p>
+              <ul className="space-y-3 mb-8">
+                {slide.content.points?.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3 text-lg text-neutral-400">
+                    <span className="text-[#c9a227]">→</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="border-l-2 border-[#c9a227] pl-6">
+                <p className="text-xl text-white font-medium">{slide.content.result}</p>
+              </div>
+            </div>
+          )}
+
+          {slide.type === 'pseo-example' && (
+            <div>
+              <p className="text-[#c9a227] uppercase tracking-widest text-sm mb-4">{slide.content.subtitle}</p>
+              <h2 className="text-5xl font-bold mb-12">{slide.content.title}</h2>
+              <div className="grid md:grid-cols-2 gap-12">
+                <div>
+                  <div className="text-neutral-500 text-sm uppercase tracking-widest mb-4">The Matrix</div>
+                  <div className="border border-white/20 p-6">
+                    <div className="text-sm text-neutral-500 mb-2">Services:</div>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {slide.content.matrix?.services.map((s) => (
+                        <span key={s} className="border border-[#c9a227]/50 text-[#c9a227] px-2 py-1 text-sm">{s}</span>
+                      ))}
+                    </div>
+                    <div className="text-sm text-neutral-500 mb-2">× Industries:</div>
+                    <div className="flex flex-wrap gap-2">
+                      {slide.content.matrix?.industries.map((ind) => (
+                        <span key={ind} className="border border-white/30 text-white px-2 py-1 text-sm">{ind}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="mt-6 text-center">
+                    <div className="text-5xl font-bold text-[#c9a227]">{slide.content.stats?.pages}</div>
+                    <div className="text-neutral-500">pages ({slide.content.stats?.formula})</div>
+                  </div>
+                </div>
+                <div>
+                  <div className="text-neutral-500 text-sm uppercase tracking-widest mb-4">Example URLs</div>
+                  <div className="space-y-3">
+                    {slide.content.examples?.map((url) => (
+                      <div key={url} className="bg-[#0d1321] border border-white/10 px-4 py-3 font-mono text-sm text-neutral-300">
+                        {url}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           )}
 
