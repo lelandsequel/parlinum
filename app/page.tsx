@@ -10,15 +10,25 @@ export default function IntroPage() {
   const [showSkip, setShowSkip] = useState(false);
   const [showLogo, setShowLogo] = useState(true);
   const [videoStarted, setVideoStarted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if mobile
+    const checkMobile = () => window.innerWidth < 768;
+    setIsMobile(checkMobile());
+    
+    // Skip intro on mobile - go straight to home
+    if (checkMobile()) {
+      router.replace('/home');
+      return;
+    }
+
     // Show skip button after 2 seconds
     const skipTimer = setTimeout(() => setShowSkip(true), 2000);
     return () => clearTimeout(skipTimer);
-  }, []);
+  }, [router]);
 
   const handleVideoPlay = () => {
-    // Fade out logo when video actually starts playing
     setVideoStarted(true);
     setTimeout(() => setShowLogo(false), 1500);
   };
@@ -39,6 +49,15 @@ export default function IntroPage() {
     }
   };
 
+  // Don't render anything on mobile (will redirect)
+  if (isMobile) {
+    return (
+      <div className="fixed inset-0 bg-[#0a0f1a] flex items-center justify-center">
+        <div className="text-white/50 text-sm">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <div 
       className={`fixed inset-0 bg-black z-50 transition-opacity duration-700 ${fadeOut ? 'opacity-0' : 'opacity-100'}`}
@@ -53,7 +72,7 @@ export default function IntroPage() {
           playsInline
           onPlay={handleVideoPlay}
           onEnded={handleVideoEnd}
-          className="w-[110%] h-[110%] object-cover object-left-top"
+          className="w-full h-full object-cover"
         >
           <source src="/intro.mp4" type="video/mp4" />
         </video>
