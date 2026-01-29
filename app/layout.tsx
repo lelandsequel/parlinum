@@ -42,7 +42,7 @@ export default function RootLayout({
         <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-5">
           <div className="max-w-[1400px] mx-auto flex justify-between items-center">
             <Link href="/home" className="hover:opacity-80 transition-opacity">
-              <img src="/logo.jpg" alt="Parlinum Consulting" className="h-16 w-auto mix-blend-lighten" />
+              <img src="/logo.png" alt="Parlinum Consulting" className="h-16 w-auto" />
             </Link>
             
             <div className="hidden md:flex items-center gap-8">
@@ -100,7 +100,7 @@ export default function RootLayout({
           <div className="max-w-[1400px] mx-auto px-6 md:px-8 py-16">
             <div className="grid md:grid-cols-4 gap-12">
               <div className="md:col-span-2">
-                <img src="/logo.jpg" alt="Parlinum Consulting" className="h-12 w-auto mb-4" />
+                <img src="/logo.png" alt="Parlinum Consulting" className="h-12 w-auto mb-4" />
                 <p className="text-neutral-500 text-sm max-w-md mb-6">
                   Certified Service-Disabled Veteran-Owned Small Business (SDVOSB) delivering 
                   enterprise risk management and strategic consulting to Fortune 500, federal, 
